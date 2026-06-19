@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/Vachanbs/ansilbleprac.git'
+                git branch: 'main', url: 'https://github.com/Vachanbs/ansibleprac.git'
             }
         }
 
