@@ -1,0 +1,16 @@
+- name: Deploy Tomcat
+  host: web
+  become: yes
+  
+  tasks:
+    - name: Source to destination
+      copy:
+        src: "/var/snap/jenkins/5022/workspace/ansibleprac/target/ansibleprac.war"
+        destin: "/opt/tomcat/webapps/ansibleprac.war"
+        remote_src: no
+        
+    - name: Stratup.sh
+      shell: /opt/tomcat/bin/stratup.sh
+      	
+    - name: shutdown.sh
+      shell: /opt/tomcat/bin/shutdown.sh
